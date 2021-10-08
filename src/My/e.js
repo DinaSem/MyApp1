@@ -1,13 +1,21 @@
-function nbYear(p0, percent, aug, p) {
-    // Initialise array.
-    var finalCatch = [];
-    // Early conversion.
-    var percent = percent / 100;
-    // Looping through.
-    for(var p0; p0 < p; p0+=p0*percent+aug) {
-        currValue = p0 + p0 * percent + aug;
-        finalCatch.push(currValue);
+function longest(s1, s2) {
+  let result = [];
+    for (let i=0; i<s1.length; i++){
+        if(result.indexOf(s1[i])===-1){
+            result.push(s1[i]);
+        }
     }
 
-    return finalCatch.length;
+    for (let j=0; j<s2.length; j++){
+        if(result.indexOf(s2[j])===-1){
+            result.push(s2[j]);
+        }
+}
+
+result = result.map(function(elem){
+    return elem = elem.toLowerCase();
+});
+
+result = result.sort();
+result = result.join('');
 }
